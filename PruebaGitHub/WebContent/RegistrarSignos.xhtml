@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>CitaMedica</title>
+
+
+</h:head>
+<h:body>
+	<h1>Crear Signos</h1>
+	
+			<div class="col-md-9 col-lg-8 mx-auto">
+							
+								<h:form id="form">
+									<label >Citas</label>
+							
+								<h:selectOneMenu value="#{signosVitalesBean.idCitaMedica}"
+									class="confondo">
+									<f:selectItems value="#{signosVitalesBean.listcitasMedicas}" var="list3"
+										itemValue="#{list3.codigo}" itemLabel="#{list3.codigo}" />
+								</h:selectOneMenu>
+								<br></br>
+								
+								<label >Pecion</label>
+								<div class="form-label-group">
+										<h:inputText value="#{signosVitalesBean.presionSig}"
+											styleClass="form-control" id="presion"
+											required="true" requiredMessage="Obligatorio" />
+								</div>
+								<label >frecuencia Cardiaca</label>
+								<div class="form-label-group">
+										<h:inputText value="#{signosVitalesBean.fresuenciaCardiacaSig}"
+											styleClass="form-control" id="frecuencia"
+											required="true" requiredMessage="Obligatorio" />
+								</div>
+								<label>frecuencia respiratoria</label>
+								<div class="form-label-group">
+										<h:inputText value="#{signosVitalesBean.fresuenciaRespiratoriaSig}"
+											styleClass="form-control" id="fecha"
+											required="true" requiredMessage="Obligatorio" />
+								</div>
+								
+								<label>temepratura</label>
+								<div class="form-label-group">
+										<h:inputText value="#{signosVitalesBean.temperaturaSig}"
+											styleClass="form-control" id="temperatura"
+											required="true" requiredMessage="Obligatorio" />
+								</div>
+								
+								<label>Saturacion</label>
+								<div class="form-label-group">
+										<h:inputText value="#{signosVitalesBean.saturacionSig}"
+											styleClass="form-control" id="saturacion"
+											required="true" requiredMessage="Obligatorio" />
+								</div>
+								
+								
+								
+					
+					
+
+									<h:commandButton value=" Crear Signos"
+										action="#{signosVitalesBean.crearSignos()}" />
+
+									
+								</h:form>
+							</div>
+							
+							
+							
+							
+						
+	
+	
+	
+</h:body>
+</html>

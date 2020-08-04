@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>CitaMedica</title>
+
+
+</h:head>
+<h:body>
+	<h1>Crear Cita</h1>
+	
+			<div class="col-md-9 col-lg-8 mx-auto">
+							
+								<h:form id="form">
+									<label >Paciente</label>
+							
+								<h:selectOneMenu value="#{citaMedicaBean.idpaciente}"
+									class="confondo">
+									<f:selectItems value="#{citaMedicaBean.listPacientes}" var="list2"
+										itemValue="#{list2.codigo}" itemLabel="#{list2.nombre}" />
+								</h:selectOneMenu>
+								<br></br>
+								
+								<label >Alergia</label>
+								<div class="form-label-group">
+										<h:inputText value="#{citaMedicaBean.alergiasPaciente}"
+											styleClass="form-control" id="alergia"
+											required="true" requiredMessage="Obligatorio" />
+								</div>
+								<label >Enfermedad anterior</label>
+								<div class="form-label-group">
+										<h:inputText value="#{citaMedicaBean.efermedadAnterior}"
+											styleClass="form-control" id="enfermedad"
+											required="true" requiredMessage="Obligatorio" />
+								</div>
+								<label>Fecha de la cita</label>
+								<div class="form-label-group">
+										<h:inputText value="#{citaMedicaBean.fechaCita}"
+											styleClass="form-control" id="fecha"
+											required="true" requiredMessage="Obligatorio" />
+								</div>
+								
+								<label>Sintoma</label>
+								<div class="form-label-group">
+										<h:inputText value="#{citaMedicaBean.sintomaPaciente}"
+											styleClass="form-control" id="sintoma"
+											required="true" requiredMessage="Obligatorio" />
+								</div>
+								
+								
+								
+					
+					
+
+									<h:commandButton value=" Crear Cita"
+										action="#{citaMedicaBean.crearCitaMedica()}" />
+
+									
+								</h:form>
+							</div>
+							
+							
+							
+							
+									
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</h:body>
+</html>
