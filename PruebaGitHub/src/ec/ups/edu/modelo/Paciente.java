@@ -3,6 +3,7 @@ package ec.ups.edu.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,6 +35,8 @@ public class Paciente {
 	
 	private String correo;
 	
+	
+	@JsonbTransient
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente")
 	private List<CitaMedica> citasMedicas = new ArrayList<CitaMedica>();
 

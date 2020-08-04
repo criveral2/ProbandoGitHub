@@ -9,38 +9,69 @@
 
 </h:head>
 <h:body>
-	
-				
-	
-	<h1>Buscar</h1>
-	
-								<label >Citas</label>
-								<label >ID de Citas</label>
-							
-								<h:selectOneMenu value="#{pacienteBean.idCitaPaciente}"
-									class="confondo">
-									<f:selectItems value="#{pacienteBean.listcitasMedicass}" var="list3"
-										itemValue="#{list3.codigo}" itemLabel="#{list3.codigo}" />
-								</h:selectOneMenu>
-								<br></br>
-								
-	
-	
-	
-	
-		<h:commandButton value="Buscar Cita Medica"
-										action="#{pacienteBean.buscarCita()}" />
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	<h:form id="form">
+
+
+		<h1>Buscar</h1>
+
+		<label>Citas</label>
+		<label>ID de Citas</label>
+
+		<h:selectOneMenu value="#{pacienteBean.idCitaPaciente}"
+			class="confondo">
+			<f:selectItems value="#{pacienteBean.listcitasMedicass}" var="list3"
+				itemValue="#{list3.codigo}" itemLabel="#{list3.codigo}" />
+		</h:selectOneMenu>
+		<br></br>
+
+		<h:inputText value="#{pacienteBean.buscarCedula}" />
+
+
+		<h:commandButton value="Buscar Cita Medica" action="#{pacienteBean.buscarCita()}" /> 
+
+		<h:commandButton value="Listar Datos"
+			action="#{pacienteBean.buscarCita()}">
+			<f:ajax render="cedula " />
+		</h:commandButton>
+		<br />
+
+		<h:outputLabel id="cedula" value="Cedula: #{pacienteBean.cedulaAjax}" />
+		<br />
+
+
+
+	</h:form>
+
+
+	<h:dataTable value="#{pacienteBean.citaEncontrada}" var="f"
+		headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
+		<h:column>
+			<f:facet name="header">Codigo</f:facet>#{f.codigo}
+										</h:column>
+		<h:column>
+			<f:facet name="header">Alergia</f:facet>#{f.alergias}
+										</h:column>
+		<h:column>
+			<f:facet name="header">Sintoma</f:facet>#{f.sintomas}
+										</h:column>
+		<h:column>
+			<f:facet name="header">Codigo Paciente</f:facet>#{f.paciente.codigo}
+										</h:column>
+		<h:column>
+			<f:facet name="header">Nombre</f:facet>#{f.paciente.nombre}
+										</h:column>
+
+	</h:dataTable>
+
+
+
+
+
+
+
+
+
+
 </h:body>
 </html>

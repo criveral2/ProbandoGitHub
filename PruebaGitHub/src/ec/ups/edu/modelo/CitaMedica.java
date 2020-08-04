@@ -1,5 +1,6 @@
 package ec.ups.edu.modelo;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,6 +30,8 @@ public class CitaMedica {
 	
 	private String fecha;
 	
+	
+	@JsonbTransient
 	@ManyToOne
 	private Paciente paciente;
 	
